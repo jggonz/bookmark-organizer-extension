@@ -2,6 +2,9 @@
 
 A Chrome extension that replaces your New Tab page with a powerful bookmark browser and AI-powered organizer. Tired of messy bookmarks? This extension helps you search, filter, and automatically organize your bookmarks into logical categories using OpenAI.
 
+<img width="1541" height="1233" alt="image" src="https://github.com/user-attachments/assets/bc6a204c-e16c-428c-9686-9033585ac7ce" />
+
+
 ## Features
 
 - **New Tab Replacement**: Fast bookmark browser with folder tree, search, tags, and filters
