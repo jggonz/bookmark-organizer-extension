@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bookmark Organizer Settings</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Settings</h1>
+      <p>Configure your OpenAI key and privacy preferences.</p>
+    </header>
+
+    <section class="card">
+      <h2>OpenAI</h2>
+      <label>
+        API Key
+        <input id="apiKey" type="password" placeholder="sk-..." />
+      </label>
+      <label>
+        Model
+        <input id="model" type="text" placeholder="gpt-4o-mini" />
+      </label>
+      <div class="row">
+        <button id="testButton" class="btn">Test connection</button>
+        <button id="clearButton" class="btn subtle">Clear key</button>
+      </div>
+      <div id="testStatus" class="status"></div>
+    </section>
+
+    <section class="card">
+      <h2>Privacy</h2>
+      <label class="toggle">
+        <input id="redactQuery" type="checkbox" />
+        Redact query strings and fragments (recommended)
+      </label>
+      <label class="toggle">
+        <input id="sendFullUrl" type="checkbox" />
+        Send full URLs (includes query strings)
+      </label>
+    </section>
+
+    <section class="card">
+      <h2>Organization Behavior</h2>
+      <label>
+        Category root parent (top-level folder name)
+        <input id="categoryRootParent" type="text" placeholder="Bookmarks Bar" />
+      </label>
+      <label>
+        Category root folder name
+        <input id="categoryRoot" type="text" placeholder="AI Categories" />
+      </label>
+      <label>
+        Allowed top-level categories (comma-separated)
+        <input id="allowedTopLevel" type="text" placeholder="Work, Learning, Personal" />
+      </label>
+      <label>
+        Max folder depth
+        <input id="maxDepth" type="number" min="1" max="6" />
+      </label>
+      <label class="toggle">
+        <input id="applyRenames" type="checkbox" />
+        Allow AI rename suggestions to be applied
+      </label>
+      <label>
+        When a folder becomes empty after organizing
+        <select id="emptyFolderAction">
+          <option value="keep">Keep empty folders</option>
+          <option value="trash">Move to Trash folder</option>
+          <option value="delete">Delete empty folders</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="actions">
+      <button id="saveButton" class="btn primary">Save</button>
+    </section>
+
+    <section class="card">
+      <h2>Security</h2>
+      <p>Your API key is stored only in <code>chrome.storage.local</code>. It never leaves your browser except when sent directly to OpenAI.</p>
+    </section>
+  </div>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

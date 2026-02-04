@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bookmark Organizer</title>
+  <link rel="stylesheet" href="newtab.css" />
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">★</div>
+        <div>
+          <div class="title">Bookmark Organizer</div>
+          <div class="subtitle">Search and tidy your bookmarks</div>
+        </div>
+      </div>
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Search bookmarks, folders, tags" />
+      </div>
+      <div class="actions">
+        <button id="aiButton" class="btn primary">AI Organize</button>
+        <button id="settingsButton" class="btn">Settings</button>
+        <button id="exportButton" class="btn">Export Backup</button>
+      </div>
+    </header>
+
+    <div class="content">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="label">Folders</div>
+          <div class="sidebar-actions">
+            <button id="aiFolderButton" class="btn subtle">AI Folder</button>
+            <button id="collapseAll" class="btn subtle">Collapse</button>
+          </div>
+        </div>
+        <div id="folderTree" class="tree"></div>
+      </aside>
+
+      <main class="main">
+        <div class="filters">
+          <div id="tagFilters" class="chips"></div>
+          <div class="count" id="bookmarkCount">0 bookmarks</div>
+        </div>
+        <div id="bookmarkList" class="list"></div>
+      </main>
+    </div>
+  </div>
+
+  <div id="statusBar" class="status hidden"></div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="modalTitle">Preview</h2>
+        <button id="modalClose" class="btn subtle">Close</button>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+      <div id="modalActions" class="modal-actions"></div>
+    </div>
+  </div>
+
+  <script type="module" src="newtab.js"></script>
+</body>
+</html>
